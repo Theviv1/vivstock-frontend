@@ -90,7 +90,7 @@ const filteredStocks = computed(() => {
 })
 
 const formatPrice = (price, isUSD) => {
-  return isUSD ? `$${price}` : `₦${price}`
+  return isUSD ? `$${price}` : `$${price}`
 }
 </script>
 ```
