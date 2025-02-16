@@ -1,5 +1,5 @@
 <template>
-  <MainLayout class="backdrop-blur-md">
+ <Navbar/>
 
     <div class="px-1 py-4">
       <h1 class="text-2xl font-semibold mb-6 text-center relative left-[-15px] top-[-20px]">Trade</h1>
@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-  </MainLayout>
+ 
 </template>
 
 <script setup>
@@ -53,7 +53,7 @@ import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import MainLayout from '../Layout/mainLayout.vue'
 import NoTrade from './noTrade.vue'
-
+import Navbar from '../components/Navbar.vue'
 const router = useRouter()
 const trades = ref([])
 
