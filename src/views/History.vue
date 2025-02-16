@@ -44,7 +44,7 @@
           
           <div class="">
             
-            <div class="flex justify-between py-3 border-b">
+            <div class="flex justify-between py-3 border-b border-[#626060]">
               <!-- For Deposits -->
               <span class="text-gray-600 flex flex-col">
                 <span class="text-white">USD</span>
@@ -56,7 +56,7 @@
               </span>
             </div>
             <!-- For Withdrawals --> 
-            <div class="flex justify-between py-3 border-b">
+            <div class="flex justify-between py-3 border-b border-[#626060]">
               <span class="text-gray-600 flex flex-col">
                 <span class="text-white">USD</span>
                 <span class="text-[14px]">2024-03-12 14:59:24</span>
@@ -67,7 +67,7 @@
               </span>
             </div>
               <!-- For trade Tab -->
-            <div class="flex justify-between py-3 border-b">
+            <div class="flex justify-between py-3 border-b border-[#626060]">
               <span class="text-gray-600 flex flex-col">
                 <span class="text-white">USD</span>
                 <span class="text-[14px]">2024-03-12 14:59:24</span>
