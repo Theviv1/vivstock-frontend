@@ -1,0 +1,1 @@
+import{_ as o}from"./StockList-DP9xbjNB.js";import{l as s}from"./stocks-z7Gs577I.js";import{v as t,s as a,a as c}from"./index-DE0sq3M8.js";const p={__name:"LocalStocks",setup(r){return(e,l)=>(c(),t(o,{stocks:a(s),"list-type":"Local"},null,8,["stocks"]))}};export{p as default};
