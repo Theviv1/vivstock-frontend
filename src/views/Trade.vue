@@ -1,7 +1,7 @@
 <template>
  <Navbar/>
 
-    <div class="px-1 py-4">
+    <div class="px-4 py-4">
       <h1 class="text-2xl font-semibold mb-6 text-center relative left-[-15px] top-[-20px]">Trade</h1>
 
       <h3 class="flex justify-center gap-56 relative left-[-20px] top-[-30px] mb-[25px]  items-center text-white text-xl">Balance: <span class="relative left-[10px] text-bold text-xl">$213</span></h3>
