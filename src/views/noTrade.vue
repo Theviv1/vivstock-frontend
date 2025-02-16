@@ -59,29 +59,31 @@ export default {
 
     <!-- Cancel Action Modal -->
     <transition name="slide-up">
-      <div v-if="showCancelButton" class="fixed inset-0 flex items-center justify-center z-50">
+      <div v-if="showCancelButton" class="fixed inset-0 z-50">
         <!-- Overlay -->
         <div class="absolute inset-0 bg-black bg-opacity-50" @click.stop="toggleCancelButton"></div>
         
-        <!-- Modal Content -->
-        <div class="relative bg-gray-800 bg-opacity-90 backdrop-blur-md rounded-lg w-[90%] max-w-[400px] p-6 mx-auto">
-          <!-- Close Button -->
-          <div class="w-full flex justify-end mb-4">
-            <button 
-              class="text-white text-3xl hover:text-gray-300 transition-colors"
+        <!-- Modal Content positioned at original top location -->
+        <div class="absolute top-[300px] right-[35%] transform translate-x-1/2">
+          <div class="relative bg-gray-800 bg-opacity-90 backdrop-blur-md rounded-lg w-[360px] max-w-[90vw] p-4">
+            <!-- Close Button -->
+            <div class="w-full flex justify-end mb-2">
+              <button 
+                class="text-white text-3xl hover:text-gray-300 transition-colors"
+                @click.stop="cancelAction"
+              >
+                &times;
+              </button>
+            </div>
+            
+            <!-- Action Button -->
+            <button
+              class="w-full bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors"
               @click.stop="cancelAction"
             >
-              &times;
+              Close Trade
             </button>
           </div>
-          
-          <!-- Action Button -->
-          <button
-            class="w-full bg-red-600 text-white py-3 px-6 rounded-lg hover:bg-red-700 transition-colors"
-            @click.stop="cancelAction"
-          >
-            Close Trade
-          </button>
         </div>
       </div>
     </transition>
@@ -96,23 +98,34 @@ export default {
 .slide-up-enter-from,
 .slide-up-leave-to {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(20px) translateX(50%);
 }
 
 .backdrop-blur-md {
   backdrop-filter: blur(15px);
 }
 
-/* Responsive adjustments */
+@media (max-width: 768px) {
+  .absolute.top-\[300px\] {
+    top: 250px !important;
+    right: 25% !important;
+  }
+}
+
 @media (max-width: 480px) {
   .relative {
     top: -120px;
     left: -8px;
   }
   
-  .w-[350px] {
+  .w-\[350px\] {
     width: 95%;
     max-width: 350px;
+  }
+  
+  .absolute.top-\[300px\] {
+    top: 200px !important;
+    right: 15% !important;
   }
 }
 </style>
