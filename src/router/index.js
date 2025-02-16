@@ -85,68 +85,68 @@ const router = createRouter({
     },
    
     // Admin routes
-    {
-      path: '/admin',
-      component: () => import('../views/admin/AdminDashboard.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/users',
-      component: () => import('../views/admin/Users.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/new-users',
-      component: () => import('../views/admin/newUsers.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/Kyc',
-      component: () => import('../views/admin/usersKyc.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/verified-users',
-      component: () => import('../views/admin/verifiedUsers.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/unverifed-users',
-      component: () => import('../views/admin/unverifiedUsers.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/transactions',
-      component: () => import('../views/admin/Transactions.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/user-deposits',
-      component: () => import('../views/admin/usersDeposit.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/user-withdrawals',
-      component: () => import('../views/admin/usersWithdrawals.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/notification',
-      component: () => import('../views/admin/adminNotification.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
+  //   {
+  //     path: '/admin',
+  //     component: () => import('../views/admin/AdminDashboard.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/users',
+  //     component: () => import('../views/admin/Users.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/new-users',
+  //     component: () => import('../views/admin/newUsers.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/Kyc',
+  //     component: () => import('../views/admin/usersKyc.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/verified-users',
+  //     component: () => import('../views/admin/verifiedUsers.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/unverifed-users',
+  //     component: () => import('../views/admin/unverifiedUsers.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/transactions',
+  //     component: () => import('../views/admin/Transactions.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/user-deposits',
+  //     component: () => import('../views/admin/usersDeposit.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/user-withdrawals',
+  //     component: () => import('../views/admin/usersWithdrawals.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/notification',
+  //     component: () => import('../views/admin/adminNotification.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
   
-    {
-      path: '/admin/settings',
-      component: () => import('../views/admin/Settings.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    },
-    {
-      path: '/admin/Blog',
-      component: () => import('../views/admin/adminBlog.vue'),
-      meta: { guest: true , requiresAdmin: false }
-    }
-  ]
+  //   {
+  //     path: '/admin/settings',
+  //     component: () => import('../views/admin/Settings.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   },
+  //   {
+  //     path: '/admin/Blog',
+  //     component: () => import('../views/admin/adminBlog.vue'),
+  //     meta: { guest: true , requiresAdmin: false }
+  //   }
+  // ]
 })
 
 router.beforeEach(async (to, from, next) => {
