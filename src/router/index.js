@@ -146,7 +146,7 @@ const router = createRouter({
   //     component: () => import('../views/admin/adminBlog.vue'),
   //     meta: { guest: true , requiresAdmin: false }
   //   }
-  // ]
+  ]
 })
 
 router.beforeEach(async (to, from, next) => {
