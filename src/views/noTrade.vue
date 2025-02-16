@@ -1,73 +1,9 @@
-<template>
-  <div class="p-4">
-    <!-- Main Trade Cards Container -->
-    <div class="max-w-sm mx-auto space-y-4">
-      <!-- Trade Card (Buy) -->
-      <div 
-        class="flex justify-between items-center bg-transparent border border-[#626060] rounded-lg p-3"
-        @click="toggleCancelButton"
-      >
-        <div class="flex flex-col">
-          <p class="text-white">
-            MSFT <span class="text-green-500">buy</span>
-          </p>
-          <p class="flex gap-2 text-sm">
-            <span>$456</span>
-            <span>22/03/2023</span>
-          </p>
-        </div>
-        <div class="flex flex-col">
-          <p class="text-green-500 text-right">+0.1%</p>
-        </div>
-      </div>
-      <!-- Trade Card (Sell) -->
-      <div 
-        class="flex justify-between items-center bg-transparent border border-[#626060] rounded-lg p-3"
-        @click="toggleCancelButton"
-      >
-        <div class="flex flex-col">
-          <p class="text-white">
-            MSFT <span class="text-red-500">Sell</span>
-          </p>
-          <p class="flex gap-2 text-sm">
-            <span>$456</span>
-            <span>22/03/2023</span>
-          </p>
-        </div>
-        <div class="flex flex-col">
-          <p class="text-red-500 text-right">-0.01%</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal for Cancel Action -->
-    <transition name="slide-up">
-      <div v-if="showCancelButton" class="fixed inset-0 flex items-center justify-center z-50">
-        <div class="bg-gray-800 bg-opacity-50 backdrop-blur-md rounded-lg w-11/12 max-w-sm p-4 relative">
-          <!-- Cancel Icon at Top Right -->
-          <button @click.stop="cancelAction" class="absolute top-2 right-2 text-white text-3xl">
-            &times;
-          </button>
-          <transition name="slide-up">
-            <div
-              class="bg-red-600 text-white py-2 px-4 rounded-lg cursor-pointer text-center"
-              @click.stop="cancelAction"
-            >
-              Close Trade
-            </div>
-          </transition>
-        </div>
-      </div>
-    </transition>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'noTrade',
   data() {
     return {
-      showCancelButton: false, // Initially, the cancel button is hidden
+      showCancelButton: false,  // Initially, the cancel button is hidden
     };
   },
   methods: {
@@ -85,19 +21,76 @@ export default {
 };
 </script>
 
+<template>
+  <div class="relative top-[-240px] left-[-15px]" @click="toggleCancelButton">
+    <div class="flex justify-between items-center w-[350px] h-[40px] bg-transparent border-[#626060]">
+      <div class="flex flex-col">
+        <p class="text-white">
+          MSFT <span class="text-green-500">buy</span>
+        </p>
+        <p class="flex gap-2">
+          <span>$456</span>
+          <span>22/03/2023</span>
+        </p>
+      </div>
+      <div class="flex flex-col text-[#626060]">
+        <p class="text-green-500 text-right">+0.1%</p>
+      </div>
+    </div>
+    <div class="flex justify-between items-center mt-6 w-[350px] py-2 h-[40px] bg-transparent border-[#626060]">
+      <div class="flex flex-col">
+        <p class="text-white">
+          MSFT <span class="text-red-500">Sell</span>
+        </p>
+        <p class="flex gap-2">
+          <span>$456</span>
+          <span>22/03/2023</span>
+        </p>
+      </div>
+      <div class="flex flex-col text-[#626060]">
+        <p class="text-red-500 text-right">-0.01%</p>
+      </div>
+    </div>
+
+    <!-- Cancel Button Wrapper with slide-up transition -->
+    <transition name="slide-up">
+      <div v-if="showCancelButton" class="absolute top-[300px] right-[35%]">
+        <!-- Background Overlay -->
+        <div class="relative bg-gray-800 bg-opacity-50 backdrop-blur-md rounded-lg w-[360px] h-[300px] left-[125px] z-50 p-4 flex flex-col justify-center items-center">
+          <!-- Cancel X Icon at the top right -->
+          <div
+            class="absolute top-[-5px] right-2 cursor-pointer text-white text-4xl"
+            @click.stop="cancelAction"
+          >
+            &times;
+          </div>
+          <transition name="slide-up">
+            <div
+              class="bg-red-600 text-white py-2 px-4 rounded-lg cursor-pointer flex justify-start items-start"
+              @click.stop="cancelAction"
+            >
+              Close Trade
+            </div>
+          </transition>
+        </div>
+      </div>
+    </transition>
+  </div>
+</template>
+
 <style>
-/* Custom backdrop and blur */
+/* Optional: Customize the backdrop and blur styles if needed */
 .bg-gray-800 {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Dark gray overlay */
 }
 .backdrop-blur-md {
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px); /* Blur effect for the background */
 }
 
-/* Slide-up transition */
+/* Slide-up transition (vertical slide from bottom to top) */
 .slide-up-enter-active,
 .slide-up-leave-active {
-  transition: transform 0.2s ease-out;
+  transition: transform 0.1s ease-out;
 }
 .slide-up-enter-from,
 .slide-up-leave-to {
